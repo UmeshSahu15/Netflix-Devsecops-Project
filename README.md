@@ -197,7 +197,7 @@ pipeline {
         }
         stage('Checkout from Git') {
             steps {
-                git branch: 'main', url: 'https://github.com/N4si/DevSecOps-Project.git'
+                git branch: 'main', url: 'https://github.com/UmeshSahu15/Netflix-Devsecops-Project.git'
             }
         }
         stage("Sonarqube Analysis") {
@@ -287,7 +287,7 @@ pipeline{
         }
         stage('Checkout from Git'){
             steps{
-                git branch: 'main', url: 'https://github.com/N4si/DevSecOps-Project.git'
+                git branch: 'main', url: 'https://github.com/UmeshSahu15/Netflix-Devsecops-Project.git'
             }
         }
         stage("Sonarqube Analysis "){
@@ -334,12 +334,12 @@ pipeline{
         }
         stage("TRIVY"){
             steps{
-                sh "trivy image nasi101/netflix:latest > trivyimage.txt" 
+                sh "trivy image 6378257556/netflix:latest > trivyimage.txt" 
             }
         }
         stage('Deploy to container'){
             steps{
-                sh 'docker run -d --name netflix -p 8081:80 nasi101/netflix:latest'
+                sh 'docker run -d netflix -p 8081:80 6378257556/netflix:latest'
             }
         }
     }
